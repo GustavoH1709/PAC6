@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34004.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAC6.API", "PAC6.API\PAC6.API.csproj", "{2C45757B-9093-4928-BF84-8CC063BBAC69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C45757B-9093-4928-BF84-8CC063BBAC69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C45757B-9093-4928-BF84-8CC063BBAC69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C45757B-9093-4928-BF84-8CC063BBAC69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C45757B-9093-4928-BF84-8CC063BBAC69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F18B2067-4B4D-44EF-A39F-604155CC6204}
+	EndGlobalSection
+EndGlobal
