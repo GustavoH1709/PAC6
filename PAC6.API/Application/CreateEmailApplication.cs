@@ -13,9 +13,9 @@ namespace PAC6.API.Application
         private readonly FirebaseConnectionProvider _firebase;
         private readonly string _regex = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
 
-        public CreateEmailApplication()
+        public CreateEmailApplication(FirebaseConnectionProvider firebase)
         {
-            _firebase = new();
+            _firebase = firebase;
         }
 
         public async Task<bool> Handle(CreateEmailCommand command)

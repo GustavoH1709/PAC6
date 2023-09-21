@@ -22,6 +22,7 @@ namespace PAC6.API
 
             builder.Services.AddMvc();
 
+            builder.Services.AddTransient<FirebaseConnectionProvider>();
             builder.Services.AddSingleton<ICreateSensorApplication, CreateSensorApplication>();
             builder.Services.AddSingleton<ICreateParametersApplication, CreateParametersApplication>();
             builder.Services.AddSingleton<ICreateEmailApplication, CreateEmailApplication>();
