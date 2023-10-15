@@ -12,9 +12,9 @@ namespace PAC6.API.Application
     {
         private readonly FirebaseConnectionProvider _firebase;
 
-        public CreateParametersApplication()
+        public CreateParametersApplication(FirebaseConnectionProvider firebase)
         {
-            _firebase = new();
+            _firebase = firebase;
         }
 
         public async Task<bool> Handle(CreateParametersCommand command)

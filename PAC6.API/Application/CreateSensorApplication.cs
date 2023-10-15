@@ -14,9 +14,10 @@ namespace PAC6.API.Application
     {
         private readonly FirebaseConnectionProvider _firebase;
         private readonly IEmailProvider _emailProvider;
-        public CreateSensorApplication(IEmailProvider emailProvider)
+
+        public CreateSensorApplication(FirebaseConnectionProvider firebase, IEmailProvider emailProvider)
         {
-            _firebase = new();
+            _firebase = firebase;
             _emailProvider = emailProvider;
         }
 
