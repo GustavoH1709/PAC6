@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PAC6.API.Interfaces;
 
 namespace PAC6.API.Controllers
 {
@@ -6,10 +7,42 @@ namespace PAC6.API.Controllers
     [Route("[controller]")]
     public class TestController : ControllerBase
     {
-        [HttpGet] 
-        public string Index()
+        private readonly ITesteHttpApplication _testeHttpApplication;
+
+        public TestController(ITesteHttpApplication testeHttpApplication)
         {
-            return "API Online";
+            _testeHttpApplication = testeHttpApplication;
+        }
+
+        [HttpGet]
+        public string Get()
+        {
+            return "Running";
+        }
+
+        [HttpPost]
+        public string Post()
+        {
+            return "Running";
+        }
+
+        [HttpPut]
+        public string Put()
+        {
+            return "Running";
+        }
+
+        [HttpDelete]
+        public string Delete()
+        {
+            return "Running";
+        }
+
+        [HttpPost("TestHttp")]
+        public async Task<string> TestHttp()
+        {
+            return string.Empty;
+            //return await _testeHttpApplication.Handle();
         }
     }
 }

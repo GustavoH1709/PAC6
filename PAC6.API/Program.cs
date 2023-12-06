@@ -3,6 +3,7 @@ using dotenv.net;
 using PAC6.API.Application;
 using PAC6.API.Interfaces;
 using PAC6.API.Providers;
+using FluentEmail;
 
 namespace PAC6.API
 {
@@ -20,13 +21,26 @@ namespace PAC6.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    });
+            });
+
             builder.Services.AddMvc();
 
-            builder.Services.AddTransient<FirebaseConnectionProvider>();
             builder.Services.AddSingleton<ICreateSensorApplication, CreateSensorApplication>();
             builder.Services.AddSingleton<ICreateParametersApplication, CreateParametersApplication>();
             builder.Services.AddSingleton<ICreateEmailApplication, CreateEmailApplication>();
             builder.Services.AddSingleton<IEmailProvider, EmailProvider>();
+            builder.Services.AddSingleton<ITesteHttpApplication, TesteHttpApplication>();
+            builder.Services.AddSingleton<IGetSensorApplication, GetSensorApplication>();
 
             var app = builder.Build();
 
@@ -37,12 +51,11 @@ namespace PAC6.API
                 app.UseSwaggerUI();
             }
 
-
-
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
+            app.UseCors("AllowAll");
 
             app.MapControllers();
 

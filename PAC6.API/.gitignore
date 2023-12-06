@@ -117,8 +117,6 @@ ipch/
 *.vsp
 *.vspx
 *.sap
-.env
-.env.sample
 
 # Visual Studio Trace Files
 *.e2e

@@ -2,8 +2,10 @@
 {
     public class ParametersDTO
     {
-        public float Max { get; set; }
-        public float Min { get; set; }
+        public float MaxTemperatura { get; set; }
+        public float MinTemperatura { get; set; }
+        public float MaxHumidade { get; set; }
+        public float MinHumidade { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }
